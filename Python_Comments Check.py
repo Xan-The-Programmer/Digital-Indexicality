@@ -1,8 +1,10 @@
 import os
 import csv
+import Directory as d
+
 from gensim.models import FastText
 
-with open("Test Comments.csv", newline='', encoding='utf-8') as test:
+with open(d.testcoms, newline='', encoding='utf-8') as test:
     content = csv.reader(test, delimiter= ',')
     comments = [row[1] for row in content]
 
