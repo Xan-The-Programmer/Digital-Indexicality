@@ -6,12 +6,7 @@ from gensim.models import FastText
 
 def fast_text(data = d.testcoms, debug = False):
     #this function takes in a csv and returns a list of each comment to its embeding
-    with open(data, newline='', encoding='utf-8') as test:
-        content = csv.reader(test, delimiter= ',')
-        comments = [row[1] for row in content]
-
-        if debug:
-            print(comments)
+    comments = d.readto(data)
 
     model = FastText(
         sentences=comments,
